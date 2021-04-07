@@ -12,7 +12,7 @@ public class VideoViewUtils {
     // "myvideo.mp4" in directory "raw".
     public static final String RAW_VIDEO_SAMPLE = "myvideo";
     public static final String LOCAL_VIDEO_SAMPLE ="/storage/emulated/0/DCIM/Camera/VID_20180212_195520.mp4";
-    public static final String URL_VIDEO_SAMPLE  = "https://www.youtube.com/watch?v=hElECoVddrc"; //https://raw.githubusercontent.com/o7planning/webexamples/master/_testdatas_/mov_bbb.mp4";
+    public static final String URL_VIDEO_SAMPLE  = "https://www.youtube.com/watch?v=QnOcXQL2wDA&t"; //"https://www.youtube.com/watch?v=hElECoVddrc"; //https://raw.githubusercontent.com/o7planning/webexamples/master/_testdatas_/mov_bbb.mp4";
 
 
     public static final String LOG_TAG= "AndroidVideoView";
