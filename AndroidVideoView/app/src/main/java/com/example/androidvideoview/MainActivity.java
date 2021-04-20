@@ -2,13 +2,16 @@ package com.example.androidvideoview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonRaw;
     private Button buttonLocal;
     private Button buttonURL;
+
+
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         this.buttonRaw = (Button) findViewById(R.id.button_raw);
         this.buttonURL = (Button) findViewById(R.id.button_url);
 
+        this.textView = (TextView) findViewById(R.id.textView);
+
+
 
         //set the media control button
         if(this.mediaController==null){
@@ -41,6 +50,26 @@ public class MainActivity extends AppCompatActivity {
 
             //Set MediaControlled for VideoView
             this.videoview.setMediaController(mediaController);
+
+            textView.setText("HAHAHA");
+
+
+            String vid_url2 = "http://www.youtube.com/watch?v=QnOcXQL2wDA";
+            String vid_url = "https://videocdn.bodybuilding.com/video/mp4/62000/62792m.mp4"; //
+            Uri video = Uri.parse(vid_url2);
+            videoview.setVideoURI(video);
+
+
+//            try {
+////                MediaController mediacontroller = new android.widget.MediaController(this);
+//                this.mediaController.setAnchorView(videoview);
+//                Uri video = Uri.parse(vid_url);
+//                videoview.setMediaController(this.mediaController);
+//                videoview.setVideoURI(video);
+//            } catch (Exception e) {
+//                Log.e("Error", e.getMessage());
+//                e.printStackTrace();
+//            }
         }
 
         //when video screen change size
@@ -84,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String videoURL = VideoViewUtils.URL_VIDEO_SAMPLE;
-                VideoViewUtils.playURLVideo(MainActivity.this, videoview, videoURL);
+                VideoViewUtils.playURLVideo(MainActivity.this, videoview, textView, videoURL);
             }
         });
 
